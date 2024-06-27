@@ -8,7 +8,7 @@ export const useApi = () => {
     return;
   }
   async function myAsyncData<T>(...args: AsyncArgs<T>) {
-    const { error, ...rest } = await useLazyAsyncData<T>(...args);
+    const { error, ...rest } = await useAsyncData<T>(...args);
     console.log("error", error.value);
     return { error: humanReadableError(error), ...rest };
   }
